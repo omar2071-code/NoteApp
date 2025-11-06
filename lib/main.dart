@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/screens/edit_note_screen.dart';
 import 'package:note_app/screens/note_screen.dart';
 
 void main() {
@@ -13,7 +14,10 @@ class NoteApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: NoteHomeScreen.id,
-      routes: {NoteHomeScreen.id: (context) => NoteHomeScreen()},
+      routes: {
+        NoteHomeScreen.id: (context) => NoteHomeScreen(),
+        EditNoteScreen.id: (context) => EditNoteScreen(),
+      },
       theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
     );
   }

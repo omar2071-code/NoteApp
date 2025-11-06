@@ -5,6 +5,6 @@ class NoteHomeScreen extends StatelessWidget {
   static String id = 'NoteHomeScreen';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar());
+    return Scaffold(appBar: AppBar(title: Text('NoteApp')));
   }
 }

@@ -6,6 +6,12 @@ class NoteHomeScreen extends StatelessWidget {
   static String id = 'NoteHomeScreen';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: NotesScreenBody());
+    return Scaffold(
+      floatingActionButton: CircleAvatar(
+        radius: 22,
+        child: IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+      ),
+      body: NotesScreenBody(),
+    );
   }
 }

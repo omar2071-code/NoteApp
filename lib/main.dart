@@ -14,7 +14,7 @@ class NoteApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: NoteHomeScreen.id,
       routes: {NoteHomeScreen.id: (context) => NoteHomeScreen()},
-      theme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
     );
   }
 }

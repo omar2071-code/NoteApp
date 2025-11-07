@@ -1,13 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:note_app/cubit/Notes%20cubit/notes_cubit.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/screens/edit_note_screen.dart';
 
 class NotesItem extends StatelessWidget {
-  const NotesItem({super.key});
-
+  const NotesItem({Key? key, required this.noteModel}) : super(key: key);
+  final NoteModel noteModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        //BlocProvider.of<NotesCubit>(context).fetchAllNotes();
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => EditNoteScreen()),
@@ -16,7 +22,7 @@ class NotesItem extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.only(top: 5, bottom: 15),
         decoration: BoxDecoration(
-          color: Colors.orange,
+          color: Color(noteModel.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -24,13 +30,13 @@ class NotesItem extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-                'Flutter widget',
+                noteModel.title,
                 style: TextStyle(color: Colors.black),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Text(
-                  'builder your career',
+                  noteModel.subTitle,
                   style: TextStyle(color: Colors.black.withOpacity(.7)),
                 ),
               ),
@@ -43,7 +49,10 @@ class NotesItem extends StatelessWidget {
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(right: 16.0),
-              child: Text('21/08/2025', style: TextStyle(color: Colors.black)),
+              child: Text(
+                noteModel.date,
+                style: TextStyle(color: Colors.black),
+              ),
             ),
           ],
         ),

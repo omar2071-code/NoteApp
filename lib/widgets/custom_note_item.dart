@@ -14,10 +14,11 @@ class NotesItem extends StatelessWidget {
     var noteCubit = BlocProvider.of<NotesCubit>(context);
     return GestureDetector(
       onTap: () {
-        //BlocProvider.of<NotesCubit>(context).fetchAllNotes();
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => EditNoteScreen()),
+          MaterialPageRoute(
+            builder: (context) => EditNoteScreen(note: noteModel),
+          ),
         );
       },
       child: Container(

@@ -28,10 +28,7 @@ class NoteApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: NoteHomeScreen.id,
-        routes: {
-          NoteHomeScreen.id: (context) => NoteHomeScreen(),
-          EditNoteScreen.id: (context) => EditNoteScreen(),
-        },
+        routes: {NoteHomeScreen.id: (context) => NoteHomeScreen()},
         theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
       ),
     );

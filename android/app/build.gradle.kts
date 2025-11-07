@@ -42,11 +42,5 @@ android {
 flutter {
     source = "../.."
 }
-android.applicationVariants.all { variant ->
-    variant.outputs.all {
-        def appName = "MyNotes"
-        def versionName = variant.versionName
-        outputFileName = "${appName}_v${versionName}.apk"
-    }
-}
+
 

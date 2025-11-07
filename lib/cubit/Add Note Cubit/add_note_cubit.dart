@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:meta/meta.dart';
 import 'package:note_app/models/note_model.dart';
-import 'package:note_app/widgets/constaonts_file.dart';
+import 'package:note_app/widgets/constants_file.dart';
 
 part 'add_note_state.dart';
 

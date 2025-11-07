@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:meta/meta.dart';
 import 'package:note_app/models/note_model.dart';
-import 'package:note_app/widgets/constaonts_file.dart';
+import 'package:note_app/widgets/constants_file.dart';
 
 part 'notes_state.dart';
 

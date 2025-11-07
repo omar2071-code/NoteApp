@@ -11,6 +11,7 @@ class NotesItem extends StatelessWidget {
   final NoteModel noteModel;
   @override
   Widget build(BuildContext context) {
+    var noteCubit = BlocProvider.of<NotesCubit>(context);
     return GestureDetector(
       onTap: () {
         //BlocProvider.of<NotesCubit>(context).fetchAllNotes();
@@ -43,6 +44,7 @@ class NotesItem extends StatelessWidget {
               trailing: IconButton(
                 onPressed: () {
                   noteModel.delete();
+                  noteCubit.fetchAllNotes();
                 },
                 icon: Icon(Icons.delete),
                 color: Colors.black,

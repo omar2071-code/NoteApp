@@ -10,27 +10,24 @@ class NoteHomeScreen extends StatelessWidget {
   static String id = 'NoteHomeScreen';
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit()..fetchAllNotes(),
-      child: Scaffold(
-        floatingActionButton: CircleAvatar(
-          backgroundColor: kPrimaryColor,
-          radius: 22,
-          child: IconButton(
-            onPressed: () {
-              showModalBottomSheet(
-                isScrollControlled: true,
-                context: context,
-                builder: (context) {
-                  return AddNoteBottomSheet();
-                },
-              );
-            },
-            icon: Icon(Icons.add, color: Colors.black),
-          ),
+    return Scaffold(
+      floatingActionButton: CircleAvatar(
+        backgroundColor: kPrimaryColor,
+        radius: 22,
+        child: IconButton(
+          onPressed: () {
+            showModalBottomSheet(
+              isScrollControlled: true,
+              context: context,
+              builder: (context) {
+                return AddNoteBottomSheet();
+              },
+            );
+          },
+          icon: Icon(Icons.add, color: Colors.black),
         ),
-        body: NotesScreenBody(),
       ),
+      body: NotesScreenBody(),
     );
   }
 }

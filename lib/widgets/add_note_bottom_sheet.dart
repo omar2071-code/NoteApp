@@ -2,6 +2,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubit/Add%20Note%20Cubit/add_note_cubit.dart';
+import 'package:note_app/cubit/Notes%20cubit/notes_cubit.dart';
 import 'package:note_app/widgets/add_note_form.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
@@ -15,11 +16,8 @@ class AddNoteBottomSheet extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
-            // TODO: implement listener
-            if (state is AddNoteFailure) {
-              print('failuer ${state.errorMessage}');
-            }
             if (state is AddNoteSuccess) {
+              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
               Navigator.pop(context);
             }
           },

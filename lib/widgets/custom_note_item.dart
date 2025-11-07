@@ -33,13 +33,21 @@ class NotesItem extends StatelessWidget {
             ListTile(
               title: Text(
                 noteModel.title,
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w800,
+                ),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Text(
                   noteModel.subTitle,
-                  style: TextStyle(color: Colors.black.withOpacity(.7)),
+                  style: TextStyle(
+                    color: Colors.black.withOpacity(.7),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               trailing: IconButton(

@@ -44,6 +44,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
           //button size screen
           CustomButton(
             onTap: () {
+              var currentDate = DateTime.now();
+              var formatedCurrentDate = DateFormat.yMd().format(currentDate);
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
 
@@ -51,7 +53,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 var note = NoteModel(
                   title: title!,
                   subTitle: subTitle!,
-                  date: DateFormat('dd/MM/yyyy').format(DateTime.now()),
+                  date: formatedCurrentDate,
                   color: Colors.blue.value,
                 );
                 BlocProvider.of<AddNoteCubit>(context).AddNote(note);
